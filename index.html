@@ -1,0 +1,5022 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keshav G & Associates | Chartered Accountants</title>
+
+    <meta
+        name="description"
+        content="Keshav G & Associates - Chartered Accountants providing taxation, GST, accounting, audit, compliance and financial advisory services."
+    >
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    },
+                    colors: {
+                        navy: '#071426',
+                        navy2: '#0b1d35',
+                        gold: '#c9a45c',
+                        goldLight: '#e4c986',
+                        cream: '#f8f5ee'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* ==============================
+           BACKGROUND
+        ============================== */
+
+        .hero-bg {
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(201,164,92,.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 20% 80%,
+                    rgba(38,78,130,.18),
+                    transparent 30%
+                ),
+                #071426;
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(
+                    rgba(201,164,92,.06) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(201,164,92,.06) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+        }
+
+        /* ==============================
+           3D
+        ============================== */
+
+        .perspective {
+            perspective: 1200px;
+        }
+
+        .card-3d {
+            transform-style: preserve-3d;
+            transition:
+                transform .5s ease,
+                box-shadow .5s ease;
+        }
+
+        .card-3d:hover {
+            transform:
+                translateY(-12px)
+                rotateX(3deg)
+                rotateY(-3deg);
+        }
+
+        .card-depth {
+            transform: translateZ(30px);
+        }
+
+        /* ==============================
+           GLASS
+        ============================== */
+
+        .glass {
+            background: rgba(255,255,255,.055);
+            border: 1px solid rgba(255,255,255,.1);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        /* ==============================
+           GLOW
+        ============================== */
+
+        .gold-glow {
+            box-shadow:
+                0 0 0 1px rgba(201,164,92,.12),
+                0 25px 80px rgba(201,164,92,.12);
+        }
+
+        /* ==============================
+           REVEAL
+        ============================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==============================
+           FLOAT
+        ============================== */
+
+        .float {
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        .float-delay {
+            animation: floating 5s ease-in-out 1.5s infinite;
+        }
+
+        @keyframes floating {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+
+        }
+
+        /* ==============================
+           ROTATING ORB
+        ============================== */
+
+        .orb {
+            animation: rotateOrb 18s linear infinite;
+        }
+
+        @keyframes rotateOrb {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        /* ==============================
+           UNDERLINE
+        ============================== */
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: #c9a45c;
+            transition: width .3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ==============================
+           BUTTON
+        ============================== */
+
+        .gold-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    #e4c986,
+                    #b58b42
+                );
+
+            color: #071426;
+
+            box-shadow:
+                0 12px 30px rgba(201,164,92,.2);
+        }
+
+        .gold-btn:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 18px 40px rgba(201,164,92,.35);
+        }
+
+        /* ==============================
+           IMAGE
+        ============================== */
+
+        .image-overlay {
+            position: relative;
+        }
+
+        .image-overlay::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(7,20,38,.7),
+                    transparent 60%
+                );
+        }
+
+        /* ==============================
+           CURSOR GLOW
+        ============================== */
+
+        #cursorGlow {
+            position: fixed;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            pointer-events: none;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(201,164,92,.07),
+                    transparent 70%
+                );
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        /* ==============================
+           MOBILE MENU
+        ============================== */
+
+        #mobileMenu {
+            max-height: 0;
+            overflow: hidden;
+            transition:
+                max-height .4s ease,
+                opacity .3s ease;
+            opacity: 0;
+        }
+
+        #mobileMenu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* ==============================
+           FAQ
+        ============================== */
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition:
+                max-height .35s ease,
+                padding .35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-top: 14px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon {
+            transition: transform .3s ease;
+        }
+
+        /* ==============================
+           SCROLLBAR
+        ============================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #071426;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9a45c;
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+
+
+<body class="bg-[#f8f5ee] text-slate-800 font-sans">
+
+<div id="cursorGlow"></div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header
+    class="fixed top-0 left-0 right-0 z-50
+           bg-[#071426]/90 backdrop-blur-xl
+           border-b border-white/10"
+>
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="h-20 flex items-center justify-between">
+
+            <!-- LOGO -->
+
+            <a
+                href="#home"
+                class="flex items-center gap-3"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-xl
+                           bg-gradient-to-br
+                           from-[#e4c986]
+                           to-[#a87c35]
+                           flex items-center justify-center
+                           shadow-lg"
+                >
+
+                    <span
+                        class="font-display text-xl
+                               font-bold text-[#071426]"
+                    >
+                        KG
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <div
+                        class="text-white font-bold
+                               tracking-wide"
+                    >
+                        Keshav G
+                        <span class="text-[#e4c986]">
+                            & Associates
+                        </span>
+                    </div>
+
+                    <div
+                        class="text-[10px] uppercase
+                               tracking-[.25em]
+                               text-white/50"
+                    >
+                        Chartered Accountants
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP MENU -->
+
+            <nav class="hidden lg:flex items-center gap-8">
+
+                <a
+                    href="#home"
+                    class="nav-link text-sm text-white/80
+                           hover:text-white transition"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="#about"
+                    class="nav-link text-sm text-white/80
+                           hover:text-white transition"
+                >
+                    About
+                </a>
+
+                <a
+                    href="#services"
+                    class="nav-link text-sm text-white/80
+                           hover:text-white transition"
+                >
+                    Services
+                </a>
+
+                <a
+                    href="#process"
+                    class="nav-link text-sm text-white/80
+                           hover:text-white transition"
+                >
+                    Process
+                </a>
+
+                <a
+                    href="#faq"
+                    class="nav-link text-sm text-white/80
+                           hover:text-white transition"
+                >
+                    FAQ
+                </a>
+
+                <a
+                    href="#contact"
+                    class="gold-btn
+                           px-5 py-2.5
+                           rounded-xl
+                           text-sm font-bold
+                           transition"
+                >
+                    Contact Us
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE BUTTON -->
+
+            <button
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                class="lg:hidden
+                       w-11 h-11
+                       rounded-xl
+                       border border-white/10
+                       bg-white/5
+                       text-white
+                       flex items-center justify-center
+                       hover:bg-[#c9a45c]
+                       hover:text-[#071426]
+                       transition"
+            >
+
+                <i
+                    data-lucide="menu"
+                    id="menuIcon"
+                ></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <div id="mobileMenu" class="lg:hidden">
+
+            <nav class="pb-5 pt-2 space-y-2">
+
+                <a
+                    href="#home"
+                    class="mobile-link block
+                           px-4 py-3 rounded-xl
+                           text-white/80
+                           hover:bg-white/10
+                           hover:text-white"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="#about"
+                    class="mobile-link block
+                           px-4 py-3 rounded-xl
+                           text-white/80
+                           hover:bg-white/10
+                           hover:text-white"
+                >
+                    About
+                </a>
+
+                <a
+                    href="#services"
+                    class="mobile-link block
+                           px-4 py-3 rounded-xl
+                           text-white/80
+                           hover:bg-white/10
+                           hover:text-white"
+                >
+                    Services
+                </a>
+
+                <a
+                    href="#process"
+                    class="mobile-link block
+                           px-4 py-3 rounded-xl
+                           text-white/80
+                           hover:bg-white/10
+                           hover:text-white"
+                >
+                    Process
+                </a>
+
+                <a
+                    href="#faq"
+                    class="mobile-link block
+                           px-4 py-3 rounded-xl
+                           text-white/80
+                           hover:bg-white/10
+                           hover:text-white"
+                >
+                    FAQ
+                </a>
+
+                <a
+                    href="#contact"
+                    class="mobile-link block
+                           px-4 py-3 rounded-xl
+                           bg-[#c9a45c]
+                           text-[#071426]
+                           font-bold"
+                >
+                    Contact Us
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    id="home"
+    class="hero-bg grid-bg
+           min-h-screen
+           relative overflow-hidden
+           text-white"
+>
+
+    <!-- ORBS -->
+
+    <div
+        class="orb absolute
+               -top-32 -right-32
+               w-96 h-96
+               rounded-full
+               border border-[#c9a45c]/10"
+    ></div>
+
+    <div
+        class="orb absolute
+               bottom-0 -left-40
+               w-96 h-96
+               rounded-full
+               border border-[#c9a45c]/10"
+    ></div>
+
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8
+               pt-32 pb-20
+               min-h-screen
+               flex items-center"
+    >
+
+        <div
+            class="grid lg:grid-cols-2
+                   gap-14 lg:gap-20
+                   items-center
+                   w-full"
+        >
+
+            <!-- LEFT -->
+
+            <div class="reveal">
+
+                <div
+                    class="inline-flex items-center gap-2
+                           px-4 py-2
+                           rounded-full
+                           glass
+                           text-[#e4c986]
+                           text-xs font-semibold
+                           uppercase tracking-[.18em]
+                           mb-7"
+                >
+
+                    <span
+                        class="w-2 h-2
+                               rounded-full
+                               bg-[#e4c986]
+                               animate-pulse"
+                    ></span>
+
+                    Trusted Financial Guidance
+
+                </div>
+
+
+                <h1
+                    class="font-display
+                           text-5xl sm:text-6xl
+                           lg:text-7xl
+                           leading-[1.02]
+                           max-w-3xl"
+                >
+
+                    Numbers You Can
+                    <span class="text-[#e4c986]">
+                        Trust.
+                    </span>
+
+                    <br>
+
+                    Decisions You Can
+                    <span class="italic">
+                        Build.
+                    </span>
+
+                </h1>
+
+
+                <p
+                    class="mt-7
+                           text-white/65
+                           text-base sm:text-lg
+                           leading-8
+                           max-w-xl"
+                >
+
+                    Keshav G & Associates is a professional
+                    Chartered Accountant firm helping individuals,
+                    entrepreneurs and businesses manage taxation,
+                    accounting, compliance and financial decisions
+                    with confidence.
+
+                </p>
+
+
+                <div
+                    class="flex flex-col sm:flex-row
+                           gap-4
+                           mt-9"
+                >
+
+                    <a
+                        href="#contact"
+                        class="gold-btn
+                               inline-flex
+                               items-center justify-center
+                               gap-2
+                               px-7 py-4
+                               rounded-2xl
+                               font-bold
+                               transition"
+                    >
+
+                        Book a Consultation
+
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-5"
+                        ></i>
+
+                    </a>
+
+
+                    <a
+                        href="tel:8923810051"
+                        class="inline-flex
+                               items-center justify-center
+                               gap-2
+                               px-7 py-4
+                               rounded-2xl
+                               border border-white/15
+                               bg-white/5
+                               hover:bg-white/10
+                               font-semibold
+                               transition"
+                    >
+
+                        <i
+                            data-lucide="phone"
+                            class="w-5"
+                        ></i>
+
+                        8923810051
+
+                    </a>
+
+                </div>
+
+
+                <!-- TRUST -->
+
+                <div
+                    class="flex flex-wrap
+                           gap-7
+                           mt-12
+                           text-sm
+                           text-white/60"
+                >
+
+                    <div class="flex items-center gap-2">
+
+                        <i
+                            data-lucide="shield-check"
+                            class="w-5 text-[#e4c986]"
+                        ></i>
+
+                        Professional Guidance
+
+                    </div>
+
+                    <div class="flex items-center gap-2">
+
+                        <i
+                            data-lucide="file-check-2"
+                            class="w-5 text-[#e4c986]"
+                        ></i>
+
+                        Compliance Focused
+
+                    </div>
+
+                    <div class="flex items-center gap-2">
+
+                        <i
+                            data-lucide="lock"
+                            class="w-5 text-[#e4c986]"
+                        ></i>
+
+                        Confidential
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT 3D VISUAL -->
+
+            <div
+                class="perspective
+                       relative
+                       min-h-[480px]
+                       flex items-center justify-center
+                       reveal"
+            >
+
+                <!-- Main Card -->
+
+                <div
+                    class="card-3d
+                           relative
+                           w-full max-w-lg
+                           rounded-[2rem]
+                           glass
+                           p-6 sm:p-8
+                           gold-glow"
+                >
+
+                    <div
+                        class="absolute
+                               -top-5 -right-5
+                               w-24 h-24
+                               rounded-full
+                               bg-[#c9a45c]/15
+                               blur-xl"
+                    ></div>
+
+
+                    <div
+                        class="flex items-center
+                               justify-between
+                               mb-8"
+                    >
+
+                        <div>
+
+                            <p
+                                class="text-white/40
+                                       text-xs uppercase
+                                       tracking-widest"
+                            >
+                                Financial Overview
+                            </p>
+
+                            <h3
+                                class="text-xl font-bold mt-1"
+                            >
+                                Your Business
+                            </h3>
+
+                        </div>
+
+                        <div
+                            class="w-12 h-12
+                                   rounded-xl
+                                   bg-[#c9a45c]/15
+                                   flex items-center
+                                   justify-center"
+                        >
+
+                            <i
+                                data-lucide="landmark"
+                                class="text-[#e4c986]"
+                            ></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- fake chart -->
+
+                    <div
+                        class="h-40
+                               flex items-end
+                               gap-2 sm:gap-3"
+                    >
+
+                        <div
+                            class="flex-1
+                                   bg-[#c9a45c]/20
+                                   rounded-t-xl
+                                   h-[35%]"
+                        ></div>
+
+                        <div
+                            class="flex-1
+                                   bg-[#c9a45c]/30
+                                   rounded-t-xl
+                                   h-[48%]"
+                        ></div>
+
+                        <div
+                            class="flex-1
+                                   bg-[#c9a45c]/40
+                                   rounded-t-xl
+                                   h-[42%]"
+                        ></div>
+
+                        <div
+                            class="flex-1
+                                   bg-[#c9a45c]/50
+                                   rounded-t-xl
+                                   h-[64%]"
+                        ></div>
+
+                        <div
+                            class="flex-1
+                                   bg-[#c9a45c]/70
+                                   rounded-t-xl
+                                   h-[58%]"
+                        ></div>
+
+                        <div
+                            class="flex-1
+                                   bg-[#e4c986]
+                                   rounded-t-xl
+                                   h-[82%]"
+                        ></div>
+
+                        <div
+                            class="flex-1
+                                   bg-[#e4c986]
+                                   rounded-t-xl
+                                   h-[94%]"
+                        ></div>
+
+                    </div>
+
+
+                    <div
+                        class="border-t border-white/10
+                               mt-5 pt-5
+                               flex justify-between"
+                    >
+
+                        <div>
+
+                            <p
+                                class="text-xs
+                                       text-white/40"
+                            >
+                                Compliance
+                            </p>
+
+                            <p
+                                class="text-2xl
+                                       font-bold"
+                            >
+                                Managed
+                            </p>
+
+                        </div>
+
+
+                        <div class="text-right">
+
+                            <p
+                                class="text-xs
+                                       text-white/40"
+                            >
+                                Support
+                            </p>
+
+                            <p
+                                class="text-2xl
+                                       font-bold
+                                       text-[#e4c986]"
+                            >
+                                Reliable
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING CARD 1 -->
+
+                <div
+                    class="float
+                           absolute
+                           -top-2
+                           left-0 sm:left-[-25px]
+                           glass
+                           rounded-2xl
+                           px-5 py-4
+                           shadow-2xl"
+                >
+
+                    <div
+                        class="flex items-center gap-3"
+                    >
+
+                        <div
+                            class="w-10 h-10
+                                   rounded-xl
+                                   bg-emerald-400/10
+                                   flex items-center
+                                   justify-center"
+                        >
+
+                            <i
+                                data-lucide="trending-up"
+                                class="text-emerald-300"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p
+                                class="text-xs
+                                       text-white/40"
+                            >
+                                Financial Planning
+                            </p>
+
+                            <p
+                                class="font-bold"
+                            >
+                                Smarter Decisions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING CARD 2 -->
+
+                <div
+                    class="float-delay
+                           absolute
+                           -bottom-4
+                           right-0 sm:right-[-20px]
+                           glass
+                           rounded-2xl
+                           px-5 py-4
+                           shadow-2xl"
+                >
+
+                    <div
+                        class="flex items-center gap-3"
+                    >
+
+                        <div
+                            class="w-10 h-10
+                                   rounded-xl
+                                   bg-[#c9a45c]/10
+                                   flex items-center
+                                   justify-center"
+                        >
+
+                            <i
+                                data-lucide="receipt"
+                                class="text-[#e4c986]"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p
+                                class="text-xs
+                                       text-white/40"
+                            >
+                                Tax & Compliance
+                            </p>
+
+                            <p
+                                class="font-bold"
+                            >
+                                Peace of Mind
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    id="about"
+    class="py-24 lg:py-32 bg-white"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="grid lg:grid-cols-2
+                   gap-14
+                   items-center"
+        >
+
+            <!-- IMAGE -->
+
+            <div class="relative reveal">
+
+                <div
+                    class="rounded-[2rem]
+                           overflow-hidden
+                           shadow-2xl
+                           border border-slate-200"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
+                        alt="Professional business meeting"
+                        class="w-full h-[500px]
+                               object-cover
+                               hover:scale-105
+                               transition duration-700"
+                    >
+
+                </div>
+
+
+                <div
+                    class="absolute
+                           -bottom-7
+                           -right-5 sm:right-8
+                           bg-[#071426]
+                           text-white
+                           rounded-2xl
+                           p-6
+                           shadow-2xl
+                           max-w-xs"
+                >
+
+                    <div
+                        class="flex items-start gap-4"
+                    >
+
+                        <div
+                            class="w-11 h-11
+                                   rounded-xl
+                                   bg-[#c9a45c]
+                                   text-[#071426]
+                                   flex items-center
+                                   justify-center
+                                   shrink-0"
+                        >
+
+                            <i data-lucide="badge-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <p class="font-bold">
+                                Professional Approach
+                            </p>
+
+                            <p
+                                class="text-sm
+                                       text-white/55
+                                       mt-1"
+                            >
+                                Focused on clarity,
+                                compliance and long-term
+                                financial confidence.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="reveal">
+
+                <p
+                    class="uppercase
+                           tracking-[.3em]
+                           text-xs
+                           font-bold
+                           text-[#a47b35]"
+                >
+                    About The Firm
+                </p>
+
+                <h2
+                    class="font-display
+                           text-4xl sm:text-5xl
+                           lg:text-6xl
+                           text-[#071426]
+                           leading-tight
+                           mt-4"
+                >
+
+                    More Than
+                    <span class="text-[#b58b42]">
+                        Numbers.
+                    </span>
+
+                    <br>
+
+                    A Partner In
+                    <span class="italic">
+                        Your Growth.
+                    </span>
+
+                </h2>
+
+                <p
+                    class="text-slate-600
+                           leading-8
+                           mt-7"
+                >
+
+                    Keshav G & Associates provides professional
+                    accounting, taxation, audit, compliance and
+                    financial advisory services designed around
+                    the practical needs of individuals,
+                    professionals, startups and established
+                    businesses.
+
+                </p>
+
+                <p
+                    class="text-slate-600
+                           leading-8
+                           mt-4"
+                >
+
+                    Our approach is simple: understand your
+                    financial situation, identify opportunities
+                    and risks, explain the numbers clearly and
+                    help you take better-informed decisions.
+
+                </p>
+
+
+                <div
+                    class="grid sm:grid-cols-2
+                           gap-4 mt-8"
+                >
+
+                    <div
+                        class="p-5
+                               rounded-2xl
+                               bg-[#f8f5ee]
+                               border border-[#eadfc9]
+                               hover:-translate-y-1
+                               transition"
+                    >
+
+                        <i
+                            data-lucide="target"
+                            class="text-[#b58b42] mb-3"
+                        ></i>
+
+                        <h3
+                            class="font-bold
+                                   text-[#071426]"
+                        >
+                            Business Focus
+                        </h3>
+
+                        <p
+                            class="text-sm
+                                   text-slate-500
+                                   mt-2"
+                        >
+                            Practical solutions aligned
+                            with your business goals.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="p-5
+                               rounded-2xl
+                               bg-[#f8f5ee]
+                               border border-[#eadfc9]
+                               hover:-translate-y-1
+                               transition"
+                    >
+
+                        <i
+                            data-lucide="messages-square"
+                            class="text-[#b58b42] mb-3"
+                        ></i>
+
+                        <h3
+                            class="font-bold
+                                   text-[#071426]"
+                        >
+                            Clear Communication
+                        </h3>
+
+                        <p
+                            class="text-sm
+                                   text-slate-500
+                                   mt-2"
+                        >
+                            Complex financial matters
+                            explained simply.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+    id="services"
+    class="py-24 lg:py-32
+           bg-[#071426]
+           text-white
+           relative overflow-hidden"
+>
+
+    <div
+        class="absolute inset-0
+               grid-bg
+               opacity-60"
+    ></div>
+
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8
+               relative z-10"
+    >
+
+        <div
+            class="max-w-3xl
+                   reveal"
+        >
+
+            <p
+                class="uppercase
+                       tracking-[.3em]
+                       text-xs
+                       text-[#e4c986]
+                       font-bold"
+            >
+                Our Expertise
+            </p>
+
+            <h2
+                class="font-display
+                       text-4xl sm:text-5xl
+                       lg:text-6xl
+                       mt-4"
+            >
+
+                Complete Financial
+                <span class="text-[#e4c986]">
+                    Solutions.
+                </span>
+
+            </h2>
+
+            <p
+                class="text-white/55
+                       leading-8
+                       mt-6"
+            >
+
+                From day-to-day accounting to complex tax
+                compliance and business advisory, our services
+                are structured to help you stay organized,
+                compliant and financially prepared.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="grid sm:grid-cols-2
+                   lg:grid-cols-4
+                   gap-5
+                   mt-14
+                   perspective"
+        >
+
+            <!-- SERVICE -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div
+                    class="card-depth"
+                >
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="calculator"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl
+                               font-bold"
+                    >
+                        Accounting
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7
+                               mt-3"
+                    >
+                        Organized bookkeeping,
+                        financial records and
+                        accounting support.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm
+                               font-bold
+                               mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div class="card-depth">
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="receipt-indian-rupee"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl
+                               font-bold"
+                    >
+                        Income Tax
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7
+                               mt-3"
+                    >
+                        Tax planning, return preparation
+                        and compliance support.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm
+                               font-bold
+                               mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div class="card-depth">
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="file-check-2"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl
+                               font-bold"
+                    >
+                        GST Services
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7
+                               mt-3"
+                    >
+                        GST registration, returns,
+                        reconciliation and compliance.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm
+                               font-bold
+                               mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div class="card-depth">
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="search-check"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl
+                               font-bold"
+                    >
+                        Audit & Assurance
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7
+                               mt-3"
+                    >
+                        Audit support and assurance-focused
+                        financial review.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm
+                               font-bold
+                               mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div class="card-depth">
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="building-2"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold"
+                    >
+                        Business Setup
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7 mt-3"
+                    >
+                        Guidance for business structure,
+                        registrations and initial compliance.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm font-bold mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div class="card-depth">
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="briefcase-business"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold"
+                    >
+                        Business Advisory
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7 mt-3"
+                    >
+                        Financial insights and practical
+                        guidance for business decisions.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm font-bold mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 7 -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div class="card-depth">
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="scale"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold"
+                    >
+                        Compliance
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7 mt-3"
+                    >
+                        Support for recurring statutory and
+                        financial compliance requirements.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm font-bold mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 8 -->
+
+            <div
+                class="card-3d glass
+                       rounded-3xl
+                       p-7
+                       reveal
+                       hover:bg-white/[.08]"
+            >
+
+                <div class="card-depth">
+
+                    <div
+                        class="w-14 h-14
+                               rounded-2xl
+                               bg-[#c9a45c]/10
+                               flex items-center
+                               justify-center
+                               mb-7"
+                    >
+
+                        <i
+                            data-lucide="line-chart"
+                            class="text-[#e4c986]"
+                        ></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold"
+                    >
+                        Financial Planning
+                    </h3>
+
+                    <p
+                        class="text-sm
+                               text-white/50
+                               leading-7 mt-3"
+                    >
+                        Planning insights to help organize
+                        financial goals and decisions.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="inline-flex
+                               items-center gap-2
+                               text-[#e4c986]
+                               text-sm font-bold mt-6"
+                    >
+                        Explore
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-4"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section
+    class="py-20
+           bg-[#c9a45c]
+           text-[#071426]"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="grid grid-cols-2
+                   lg:grid-cols-4
+                   gap-8"
+        >
+
+            <div
+                class="text-center reveal"
+            >
+
+                <div
+                    class="counter text-4xl
+                           sm:text-5xl
+                           font-display
+                           font-bold"
+                    data-target="100"
+                >
+                    0
+                </div>
+
+                <p
+                    class="mt-2
+                           font-semibold"
+                >
+                    Attention to Detail
+                </p>
+
+            </div>
+
+
+            <div
+                class="text-center reveal"
+            >
+
+                <div
+                    class="counter text-4xl
+                           sm:text-5xl
+                           font-display
+                           font-bold"
+                    data-target="360"
+                >
+                    0
+                </div>
+
+                <p
+                    class="mt-2
+                           font-semibold"
+                >
+                    Degree Perspective
+                </p>
+
+            </div>
+
+
+            <div
+                class="text-center reveal"
+            >
+
+                <div
+                    class="counter text-4xl
+                           sm:text-5xl
+                           font-display
+                           font-bold"
+                    data-target="24"
+                >
+                    0
+                </div>
+
+                <p
+                    class="mt-2
+                           font-semibold"
+                >
+                    Hour Response Goal
+                </p>
+
+            </div>
+
+
+            <div
+                class="text-center reveal"
+            >
+
+                <div
+                    class="counter text-4xl
+                           sm:text-5xl
+                           font-display
+                           font-bold"
+                    data-target="1"
+                >
+                    0
+                </div>
+
+                <p
+                    class="mt-2
+                           font-semibold"
+                >
+                    Dedicated Approach
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHART / INSIGHTS
+========================================================= -->
+
+<section
+    class="py-24 lg:py-32
+           bg-[#f8f5ee]"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="grid lg:grid-cols-5
+                   gap-10
+                   items-center"
+        >
+
+            <div
+                class="lg:col-span-2
+                       reveal"
+            >
+
+                <p
+                    class="uppercase
+                           tracking-[.3em]
+                           text-xs
+                           font-bold
+                           text-[#a47b35]"
+                >
+                    Financial Visibility
+                </p>
+
+                <h2
+                    class="font-display
+                           text-4xl sm:text-5xl
+                           text-[#071426]
+                           mt-4"
+                >
+
+                    See Your Numbers.
+                    <span class="text-[#b58b42]">
+                        Understand Your Business.
+                    </span>
+
+                </h2>
+
+                <p
+                    class="text-slate-600
+                           leading-8 mt-6"
+                >
+
+                    Good financial management begins with
+                    visibility. Organized records and meaningful
+                    reporting can make it easier to identify
+                    trends, plan ahead and make informed decisions.
+
+                </p>
+
+
+                <div
+                    class="mt-8 space-y-4"
+                >
+
+                    <div
+                        class="flex gap-4"
+                    >
+
+                        <div
+                            class="w-10 h-10
+                                   rounded-xl
+                                   bg-white
+                                   shadow
+                                   flex items-center
+                                   justify-center
+                                   shrink-0"
+                        >
+
+                            <i
+                                data-lucide="check"
+                                class="text-[#b58b42]"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3
+                                class="font-bold
+                                       text-[#071426]"
+                            >
+                                Better Visibility
+                            </h3>
+
+                            <p
+                                class="text-sm
+                                       text-slate-500 mt-1"
+                            >
+                                Keep financial information
+                                organized and accessible.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="flex gap-4"
+                    >
+
+                        <div
+                            class="w-10 h-10
+                                   rounded-xl
+                                   bg-white
+                                   shadow
+                                   flex items-center
+                                   justify-center
+                                   shrink-0"
+                        >
+
+                            <i
+                                data-lucide="check"
+                                class="text-[#b58b42]"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3
+                                class="font-bold
+                                       text-[#071426]"
+                            >
+                                Better Planning
+                            </h3>
+
+                            <p
+                                class="text-sm
+                                       text-slate-500 mt-1"
+                            >
+                                Use financial insights to
+                                plan upcoming decisions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="flex gap-4"
+                    >
+
+                        <div
+                            class="w-10 h-10
+                                   rounded-xl
+                                   bg-white
+                                   shadow
+                                   flex items-center
+                                   justify-center
+                                   shrink-0"
+                        >
+
+                            <i
+                                data-lucide="check"
+                                class="text-[#b58b42]"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3
+                                class="font-bold
+                                       text-[#071426]"
+                            >
+                                Better Control
+                            </h3>
+
+                            <p
+                                class="text-sm
+                                       text-slate-500 mt-1"
+                            >
+                                Reduce avoidable financial
+                                confusion and delays.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHART -->
+
+            <div
+                class="lg:col-span-3
+                       bg-white
+                       rounded-[2rem]
+                       p-5 sm:p-8
+                       shadow-xl
+                       border border-slate-100
+                       reveal"
+            >
+
+                <div
+                    class="flex flex-col sm:flex-row
+                           sm:items-center
+                           justify-between
+                           gap-3 mb-8"
+                >
+
+                    <div>
+
+                        <p
+                            class="text-xs uppercase
+                                   tracking-widest
+                                   text-slate-400"
+                        >
+                            Illustrative Dashboard
+                        </p>
+
+                        <h3
+                            class="font-display
+                                   text-2xl
+                                   text-[#071426]
+                                   mt-1"
+                        >
+                            Business Financial Trend
+                        </h3>
+
+                    </div>
+
+                    <span
+                        class="text-xs
+                               px-3 py-2
+                               rounded-full
+                               bg-[#f8f5ee]
+                               text-[#a47b35]"
+                    >
+                        Demo data
+                    </span>
+
+                </div>
+
+                <div
+                    class="h-[320px]"
+                >
+
+                    <canvas
+                        id="financeChart"
+                    ></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY CHOOSE US
+========================================================= -->
+
+<section
+    class="py-24 lg:py-32
+           bg-white"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="text-center
+                   max-w-3xl
+                   mx-auto
+                   reveal"
+        >
+
+            <p
+                class="uppercase
+                       tracking-[.3em]
+                       text-xs
+                       font-bold
+                       text-[#a47b35]"
+            >
+                Why Keshav G & Associates
+            </p>
+
+            <h2
+                class="font-display
+                       text-4xl sm:text-5xl
+                       lg:text-6xl
+                       text-[#071426]
+                       mt-4"
+            >
+
+                Professional.
+                <span class="text-[#b58b42]">
+                    Practical.
+                </span>
+                Personal.
+
+            </h2>
+
+        </div>
+
+
+        <div
+            class="grid md:grid-cols-2
+                   lg:grid-cols-3
+                   gap-6 mt-14"
+        >
+
+            <div
+                class="group
+                       p-8
+                       rounded-[2rem]
+                       bg-[#071426]
+                       text-white
+                       hover:-translate-y-3
+                       transition duration-500
+                       shadow-xl
+                       reveal"
+            >
+
+                <div
+                    class="w-14 h-14
+                           rounded-2xl
+                           bg-[#c9a45c]/10
+                           flex items-center
+                           justify-center
+                           mb-8
+                           group-hover:bg-[#c9a45c]
+                           transition"
+                >
+
+                    <i
+                        data-lucide="brain"
+                        class="text-[#e4c986]
+                               group-hover:text-[#071426]"
+                    ></i>
+
+                </div>
+
+                <h3
+                    class="text-xl font-bold"
+                >
+                    Strategic Thinking
+                </h3>
+
+                <p
+                    class="text-white/50
+                           leading-7
+                           mt-3"
+                >
+                    We look beyond individual transactions
+                    to understand the bigger financial picture.
+                </p>
+
+            </div>
+
+
+            <div
+                class="group
+                       p-8
+                       rounded-[2rem]
+                       bg-[#f8f5ee]
+                       border border-[#eadfc9]
+                       hover:-translate-y-3
+                       transition duration-500
+                       reveal"
+            >
+
+                <div
+                    class="w-14 h-14
+                           rounded-2xl
+                           bg-[#c9a45c]/10
+                           flex items-center
+                           justify-center
+                           mb-8
+                           group-hover:bg-[#c9a45c]
+                           transition"
+                >
+
+                    <i
+                        data-lucide="shield-check"
+                        class="text-[#b58b42]"
+                    ></i>
+
+                </div>
+
+                <h3
+                    class="text-xl font-bold
+                           text-[#071426]"
+                >
+                    Compliance Mindset
+                </h3>
+
+                <p
+                    class="text-slate-500
+                           leading-7
+                           mt-3"
+                >
+                    A structured approach to keeping financial
+                    and tax responsibilities organized.
+                </p>
+
+            </div>
+
+
+            <div
+                class="group
+                       p-8
+                       rounded-[2rem]
+                       bg-[#f8f5ee]
+                       border border-[#eadfc9]
+                       hover:-translate-y-3
+                       transition duration-500
+                       reveal"
+            >
+
+                <div
+                    class="w-14 h-14
+                           rounded-2xl
+                           bg-[#c9a45c]/10
+                           flex items-center
+                           justify-center
+                           mb-8
+                           group-hover:bg-[#c9a45c]
+                           transition"
+                >
+
+                    <i
+                        data-lucide="handshake"
+                        class="text-[#b58b42]"
+                    ></i>
+
+                </div>
+
+                <h3
+                    class="text-xl font-bold
+                           text-[#071426]"
+                >
+                    Long-Term Relationships
+                </h3>
+
+                <p
+                    class="text-slate-500
+                           leading-7
+                           mt-3"
+                >
+                    We aim to become a dependable financial
+                    partner rather than just a service provider.
+                </p>
+
+            </div>
+
+
+            <div
+                class="group
+                       p-8
+                       rounded-[2rem]
+                       bg-[#f8f5ee]
+                       border border-[#eadfc9]
+                       hover:-translate-y-3
+                       transition duration-500
+                       reveal"
+            >
+
+                <div
+                    class="w-14 h-14
+                           rounded-2xl
+                           bg-[#c9a45c]/10
+                           flex items-center
+                           justify-center
+                           mb-8"
+                >
+
+                    <i
+                        data-lucide="clock-3"
+                        class="text-[#b58b42]"
+                    ></i>
+
+                </div>
+
+                <h3
+                    class="text-xl font-bold
+                           text-[#071426]"
+                >
+                    Timely Support
+                </h3>
+
+                <p
+                    class="text-slate-500
+                           leading-7
+                           mt-3"
+                >
+                    Clear communication and organized workflows
+                    help keep important tasks moving.
+                </p>
+
+            </div>
+
+
+            <div
+                class="group
+                       p-8
+                       rounded-[2rem]
+                       bg-[#071426]
+                       text-white
+                       hover:-translate-y-3
+                       transition duration-500
+                       reveal"
+            >
+
+                <div
+                    class="w-14 h-14
+                           rounded-2xl
+                           bg-[#c9a45c]/10
+                           flex items-center
+                           justify-center
+                           mb-8"
+                >
+
+                    <i
+                        data-lucide="lock-keyhole"
+                        class="text-[#e4c986]"
+                    ></i>
+
+                </div>
+
+                <h3
+                    class="text-xl font-bold"
+                >
+                    Confidentiality
+                </h3>
+
+                <p
+                    class="text-white/50
+                           leading-7
+                           mt-3"
+                >
+                    Financial information deserves careful,
+                    responsible handling and professional trust.
+                </p>
+
+            </div>
+
+
+            <div
+                class="group
+                       p-8
+                       rounded-[2rem]
+                       bg-[#f8f5ee]
+                       border border-[#eadfc9]
+                       hover:-translate-y-3
+                       transition duration-500
+                       reveal"
+            >
+
+                <div
+                    class="w-14 h-14
+                           rounded-2xl
+                           bg-[#c9a45c]/10
+                           flex items-center
+                           justify-center
+                           mb-8"
+                >
+
+                    <i
+                        data-lucide="lightbulb"
+                        class="text-[#b58b42]"
+                    ></i>
+
+                </div>
+
+                <h3
+                    class="text-xl font-bold
+                           text-[#071426]"
+                >
+                    Practical Advice
+                </h3>
+
+                <p
+                    class="text-slate-500
+                           leading-7
+                           mt-3"
+                >
+                    Advice should be understandable and useful
+                    in real-world business situations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section
+    id="process"
+    class="py-24 lg:py-32
+           bg-[#071426]
+           text-white"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="grid lg:grid-cols-2
+                   gap-14
+                   items-end"
+        >
+
+            <div class="reveal">
+
+                <p
+                    class="uppercase
+                           tracking-[.3em]
+                           text-xs
+                           text-[#e4c986]
+                           font-bold"
+                >
+                    Our Process
+                </p>
+
+                <h2
+                    class="font-display
+                           text-4xl sm:text-5xl
+                           lg:text-6xl
+                           mt-4"
+                >
+
+                    Simple Process.
+                    <span class="text-[#e4c986]">
+                        Clear Outcomes.
+                    </span>
+
+                </h2>
+
+            </div>
+
+            <p
+                class="text-white/50
+                       leading-8
+                       reveal"
+            >
+
+                We believe professional financial services
+                should not feel complicated. Our process keeps
+                communication clear and each step structured.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="grid md:grid-cols-2
+                   lg:grid-cols-4
+                   gap-5
+                   mt-14"
+        >
+
+            <div
+                class="relative
+                       p-7
+                       rounded-3xl
+                       border border-white/10
+                       bg-white/[.03]
+                       hover:bg-white/[.07]
+                       transition
+                       reveal"
+            >
+
+                <span
+                    class="text-5xl
+                           font-display
+                           text-[#c9a45c]/30"
+                >
+                    01
+                </span>
+
+                <h3
+                    class="text-xl
+                           font-bold
+                           mt-8"
+                >
+                    Understand
+                </h3>
+
+                <p
+                    class="text-white/45
+                           text-sm
+                           leading-7
+                           mt-3"
+                >
+                    We understand your business, financial
+                    situation and immediate requirements.
+                </p>
+
+            </div>
+
+
+            <div
+                class="relative
+                       p-7
+                       rounded-3xl
+                       border border-white/10
+                       bg-white/[.03]
+                       hover:bg-white/[.07]
+                       transition
+                       reveal"
+            >
+
+                <span
+                    class="text-5xl
+                           font-display
+                           text-[#c9a45c]/30"
+                >
+                    02
+                </span>
+
+                <h3
+                    class="text-xl
+                           font-bold
+                           mt-8"
+                >
+                    Analyse
+                </h3>
+
+                <p
+                    class="text-white/45
+                           text-sm
+                           leading-7
+                           mt-3"
+                >
+                    We review relevant records and identify
+                    key financial and compliance considerations.
+                </p>
+
+            </div>
+
+
+            <div
+                class="relative
+                       p-7
+                       rounded-3xl
+                       border border-white/10
+                       bg-white/[.03]
+                       hover:bg-white/[.07]
+                       transition
+                       reveal"
+            >
+
+                <span
+                    class="text-5xl
+                           font-display
+                           text-[#c9a45c]/30"
+                >
+                    03
+                </span>
+
+                <h3
+                    class="text-xl
+                           font-bold
+                           mt-8"
+                >
+                    Advise
+                </h3>
+
+                <p
+                    class="text-white/45
+                           text-sm
+                           leading-7
+                           mt-3"
+                >
+                    We explain the available options and
+                    recommend practical next steps.
+                </p>
+
+            </div>
+
+
+            <div
+                class="relative
+                       p-7
+                       rounded-3xl
+                       border border-[#c9a45c]/30
+                       bg-[#c9a45c]/10
+                       hover:bg-[#c9a45c]/15
+                       transition
+                       reveal"
+            >
+
+                <span
+                    class="text-5xl
+                           font-display
+                           text-[#e4c986]/50"
+                >
+                    04
+                </span>
+
+                <h3
+                    class="text-xl
+                           font-bold
+                           mt-8"
+                >
+                    Execute
+                </h3>
+
+                <p
+                    class="text-white/55
+                           text-sm
+                           leading-7
+                           mt-3"
+                >
+                    We help move the agreed financial,
+                    accounting or compliance work forward.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     IMAGE CTA
+========================================================= -->
+
+<section
+    class="relative
+           min-h-[620px]
+           flex items-center
+           overflow-hidden"
+>
+
+    <img
+        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1800&q=85"
+        alt="Professional business discussion"
+        class="absolute inset-0
+               w-full h-full
+               object-cover"
+    >
+
+    <div
+        class="absolute inset-0
+               bg-[#071426]/85"
+    ></div>
+
+    <div
+        class="relative z-10
+               max-w-7xl mx-auto
+               px-5 lg:px-8
+               w-full"
+    >
+
+        <div
+            class="max-w-3xl reveal"
+        >
+
+            <p
+                class="uppercase
+                       tracking-[.3em]
+                       text-xs
+                       text-[#e4c986]
+                       font-bold"
+            >
+                Your Financial Partner
+            </p>
+
+            <h2
+                class="font-display
+                       text-5xl sm:text-6xl
+                       lg:text-7xl
+                       text-white
+                       leading-tight
+                       mt-5"
+            >
+
+                Let's Make Your
+                <span class="text-[#e4c986]">
+                    Numbers Work.
+                </span>
+
+            </h2>
+
+            <p
+                class="text-white/60
+                       text-lg
+                       leading-8
+                       mt-6
+                       max-w-2xl"
+            >
+
+                Whether you are an individual, professional,
+                startup or established business, get professional
+                financial guidance tailored to your requirements.
+
+            </p>
+
+            <a
+                href="#contact"
+                class="inline-flex
+                       items-center gap-3
+                       gold-btn
+                       px-7 py-4
+                       rounded-2xl
+                       font-bold
+                       mt-9
+                       transition"
+            >
+
+                Start a Conversation
+
+                <i
+                    data-lucide="arrow-right"
+                ></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+
+<section
+    class="py-24 lg:py-32
+           bg-[#f8f5ee]"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="text-center
+                   max-w-2xl
+                   mx-auto reveal"
+        >
+
+            <p
+                class="uppercase
+                       tracking-[.3em]
+                       text-xs
+                       text-[#a47b35]
+                       font-bold"
+            >
+                Client Experience
+            </p>
+
+            <h2
+                class="font-display
+                       text-4xl sm:text-5xl
+                       text-[#071426]
+                       mt-4"
+            >
+
+                Built On
+                <span class="text-[#b58b42]">
+                    Trust.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+        <div
+            class="grid md:grid-cols-3
+                   gap-6 mt-14"
+        >
+
+            <div
+                class="bg-white
+                       rounded-3xl
+                       p-7
+                       shadow-lg
+                       border border-slate-100
+                       hover:-translate-y-2
+                       transition
+                       reveal"
+            >
+
+                <div
+                    class="flex gap-1
+                           text-[#c9a45c]"
+                >
+
+                    ★★★★★
+
+                </div>
+
+                <p
+                    class="text-slate-600
+                           leading-8
+                           mt-6"
+                >
+                    "Professional communication and a
+                    straightforward approach make financial
+                    matters much easier to understand."
+                </p>
+
+                <div
+                    class="flex items-center
+                           gap-3 mt-7"
+                >
+
+                    <div
+                        class="w-11 h-11
+                               rounded-full
+                               bg-[#071426]
+                               text-[#e4c986]
+                               flex items-center
+                               justify-center
+                               font-bold"
+                    >
+                        A
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="font-bold
+                                   text-[#071426]"
+                        >
+                            Business Client
+                        </p>
+
+                        <p
+                            class="text-xs
+                                   text-slate-400"
+                        >
+                            Local Business
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="bg-[#071426]
+                       text-white
+                       rounded-3xl
+                       p-7
+                       shadow-lg
+                       hover:-translate-y-2
+                       transition
+                       reveal"
+            >
+
+                <div
+                    class="flex gap-1
+                           text-[#e4c986]"
+                >
+
+                    ★★★★★
+
+                </div>
+
+                <p
+                    class="text-white/60
+                           leading-8
+                           mt-6"
+                >
+                    "The focus on clarity and organized
+                    financial information gives us greater
+                    confidence in our decisions."
+                </p>
+
+                <div
+                    class="flex items-center
+                           gap-3 mt-7"
+                >
+
+                    <div
+                        class="w-11 h-11
+                               rounded-full
+                               bg-[#c9a45c]
+                               text-[#071426]
+                               flex items-center
+                               justify-center
+                               font-bold"
+                    >
+                        R
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="font-bold"
+                        >
+                            Professional Client
+                        </p>
+
+                        <p
+                            class="text-xs
+                                   text-white/40"
+                        >
+                            Individual Client
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="bg-white
+                       rounded-3xl
+                       p-7
+                       shadow-lg
+                       border border-slate-100
+                       hover:-translate-y-2
+                       transition
+                       reveal"
+            >
+
+                <div
+                    class="flex gap-1
+                           text-[#c9a45c]"
+                >
+
+                    ★★★★★
+
+                </div>
+
+                <p
+                    class="text-slate-600
+                           leading-8
+                           mt-6"
+                >
+                    "A professional experience with attention
+                    to detail and a practical understanding of
+                    business requirements."
+                </p>
+
+                <div
+                    class="flex items-center
+                           gap-3 mt-7"
+                >
+
+                    <div
+                        class="w-11 h-11
+                               rounded-full
+                               bg-[#071426]
+                               text-[#e4c986]
+                               flex items-center
+                               justify-center
+                               font-bold"
+                    >
+                        S
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="font-bold
+                                   text-[#071426]"
+                        >
+                            Entrepreneur
+                        </p>
+
+                        <p
+                            class="text-xs
+                                   text-slate-400"
+                        >
+                            Business Client
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section
+    id="faq"
+    class="py-24 lg:py-32
+           bg-white"
+>
+
+    <div
+        class="max-w-4xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="text-center
+                   reveal"
+        >
+
+            <p
+                class="uppercase
+                       tracking-[.3em]
+                       text-xs
+                       text-[#a47b35]
+                       font-bold"
+            >
+                FAQ
+            </p>
+
+            <h2
+                class="font-display
+                       text-4xl sm:text-5xl
+                       text-[#071426]
+                       mt-4"
+            >
+                Frequently Asked
+                <span class="text-[#b58b42]">
+                    Questions
+                </span>
+            </h2>
+
+        </div>
+
+
+        <div
+            class="mt-12
+                   space-y-4"
+        >
+
+            <div
+                class="faq-item
+                       rounded-2xl
+                       border border-slate-200
+                       p-5
+                       reveal"
+            >
+
+                <button
+                    class="faq-button
+                           w-full
+                           flex items-center
+                           justify-between
+                           text-left
+                           font-bold
+                           text-[#071426]"
+                >
+
+                    <span>
+                        What services does Keshav G & Associates provide?
+                    </span>
+
+                    <span
+                        class="faq-icon
+                               w-9 h-9
+                               rounded-full
+                               bg-[#f8f5ee]
+                               flex items-center
+                               justify-center
+                               shrink-0"
+                    >
+
+                        <i
+                            data-lucide="plus"
+                            class="w-4"
+                        ></i>
+
+                    </span>
+
+                </button>
+
+                <div
+                    class="faq-answer
+                           text-slate-500
+                           text-sm
+                           leading-7"
+                >
+
+                    We provide accounting, taxation, GST,
+                    audit and assurance support, business
+                    compliance, business advisory and
+                    financial planning services.
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="faq-item
+                       rounded-2xl
+                       border border-slate-200
+                       p-5
+                       reveal"
+            >
+
+                <button
+                    class="faq-button
+                           w-full
+                           flex items-center
+                           justify-between
+                           text-left
+                           font-bold
+                           text-[#071426]"
+                >
+
+                    <span>
+                        Can individuals also contact the firm?
+                    </span>
+
+                    <span
+                        class="faq-icon
+                               w-9 h-9
+                               rounded-full
+                               bg-[#f8f5ee]
+                               flex items-center
+                               justify-center
+                               shrink-0"
+                    >
+
+                        <i
+                            data-lucide="plus"
+                            class="w-4"
+                        ></i>
+
+                    </span>
+
+                </button>
+
+                <div
+                    class="faq-answer
+                           text-slate-500
+                           text-sm
+                           leading-7"
+                >
+
+                    Yes. The firm can assist individuals,
+                    professionals, entrepreneurs and businesses
+                    depending on their accounting, taxation and
+                    financial requirements.
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="faq-item
+                       rounded-2xl
+                       border border-slate-200
+                       p-5
+                       reveal"
+            >
+
+                <button
+                    class="faq-button
+                           w-full
+                           flex items-center
+                           justify-between
+                           text-left
+                           font-bold
+                           text-[#071426]"
+                >
+
+                    <span>
+                        How can I book a consultation?
+                    </span>
+
+                    <span
+                        class="faq-icon
+                               w-9 h-9
+                               rounded-full
+                               bg-[#f8f5ee]
+                               flex items-center
+                               justify-center
+                               shrink-0"
+                    >
+
+                        <i
+                            data-lucide="plus"
+                            class="w-4"
+                        ></i>
+
+                    </span>
+
+                </button>
+
+                <div
+                    class="faq-answer
+                           text-slate-500
+                           text-sm
+                           leading-7"
+                >
+
+                    Call 8923810051 or use the WhatsApp button
+                    to start a conversation with the firm.
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="faq-item
+                       rounded-2xl
+                       border border-slate-200
+                       p-5
+                       reveal"
+            >
+
+                <button
+                    class="faq-button
+                           w-full
+                           flex items-center
+                           justify-between
+                           text-left
+                           font-bold
+                           text-[#071426]"
+                >
+
+                    <span>
+                        Where is the firm located?
+                    </span>
+
+                    <span
+                        class="faq-icon
+                               w-9 h-9
+                               rounded-full
+                               bg-[#f8f5ee]
+                               flex items-center
+                               justify-center
+                               shrink-0"
+                    >
+
+                        <i
+                            data-lucide="plus"
+                            class="w-4"
+                        ></i>
+
+                    </span>
+
+                </button>
+
+                <div
+                    class="faq-answer
+                           text-slate-500
+                           text-sm
+                           leading-7"
+                >
+
+                    Keshav G & Associates is located at
+                    Post Office, Kacheri Road, Etah,
+                    Uttar Pradesh.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    id="contact"
+    class="py-24 lg:py-32
+           bg-[#071426]
+           text-white"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8"
+    >
+
+        <div
+            class="grid lg:grid-cols-2
+                   gap-12
+                   items-start"
+        >
+
+            <!-- LEFT -->
+
+            <div class="reveal">
+
+                <p
+                    class="uppercase
+                           tracking-[.3em]
+                           text-xs
+                           text-[#e4c986]
+                           font-bold"
+                >
+                    Contact Us
+                </p>
+
+                <h2
+                    class="font-display
+                           text-4xl sm:text-5xl
+                           lg:text-6xl
+                           mt-4"
+                >
+
+                    Let's Talk About
+                    <span class="text-[#e4c986]">
+                        Your Finances.
+                    </span>
+
+                </h2>
+
+                <p
+                    class="text-white/55
+                           leading-8
+                           mt-6
+                           max-w-xl"
+                >
+
+                    Have a question about taxation, GST,
+                    accounting, compliance or your business
+                    finances? Get in touch with Keshav G &
+                    Associates.
+
+                </p>
+
+
+                <div
+                    class="space-y-5
+                           mt-10"
+                >
+
+                    <!-- PHONE -->
+
+                    <a
+                        href="tel:8923810051"
+                        class="flex items-center
+                               gap-4
+                               group"
+                    >
+
+                        <div
+                            class="w-12 h-12
+                                   rounded-xl
+                                   bg-white/5
+                                   flex items-center
+                                   justify-center
+                                   group-hover:bg-[#c9a45c]
+                                   transition"
+                        >
+
+                            <i
+                                data-lucide="phone"
+                                class="group-hover:text-[#071426]"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p
+                                class="text-xs
+                                       text-white/35
+                                       uppercase
+                                       tracking-widest"
+                            >
+                                Phone
+                            </p>
+
+                            <p
+                                class="font-semibold mt-1"
+                            >
+                                8923810051
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- EMAIL -->
+
+                    <a
+                        href="mailto:cakeshav96@gmail.com"
+                        class="flex items-center
+                               gap-4
+                               group"
+                    >
+
+                        <div
+                            class="w-12 h-12
+                                   rounded-xl
+                                   bg-white/5
+                                   flex items-center
+                                   justify-center
+                                   group-hover:bg-[#c9a45c]
+                                   transition"
+                        >
+
+                            <i
+                                data-lucide="mail"
+                                class="group-hover:text-[#071426]"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p
+                                class="text-xs
+                                       text-white/35
+                                       uppercase
+                                       tracking-widest"
+                            >
+                                Email
+                            </p>
+
+                            <p
+                                class="font-semibold mt-1
+                                       break-all"
+                            >
+                                cakeshav96@gmail.com
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- ADDRESS -->
+
+                    <div
+                        class="flex items-center
+                               gap-4"
+                    >
+
+                        <div
+                            class="w-12 h-12
+                                   rounded-xl
+                                   bg-white/5
+                                   flex items-center
+                                   justify-center"
+                        >
+
+                            <i
+                                data-lucide="map-pin"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p
+                                class="text-xs
+                                       text-white/35
+                                       uppercase
+                                       tracking-widest"
+                            >
+                                Office
+                            </p>
+
+                            <p
+                                class="font-semibold
+                                       mt-1"
+                            >
+                                Post Office, Kacheri Road,
+                                Etah, Uttar Pradesh
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://wa.me/918923810051?text=Hello%20Keshav%20G%20%26%20Associates,%20I%20would%20like%20to%20discuss%20your%20CA%20services."
+                    target="_blank"
+                    class="inline-flex
+                           items-center
+                           gap-3
+                           mt-10
+                           px-6 py-4
+                           rounded-2xl
+                           bg-[#25D366]
+                           text-white
+                           font-bold
+                           hover:-translate-y-1
+                           transition
+                           shadow-xl"
+                >
+
+                    <i data-lucide="message-circle"></i>
+
+                    Chat on WhatsApp
+
+                </a>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div
+                class="glass
+                       rounded-[2rem]
+                       p-6 sm:p-8
+                       reveal"
+            >
+
+                <h3
+                    class="font-display
+                           text-3xl"
+                >
+                    Request a Consultation
+                </h3>
+
+                <p
+                    class="text-white/45
+                           text-sm
+                           mt-2
+                           mb-8"
+                >
+                    Send your details and the firm can
+                    get back to you.
+                </p>
+
+
+                <form
+                    id="contactForm"
+                    class="space-y-5"
+                >
+
+                    <div>
+
+                        <label
+                            class="text-sm
+                                   text-white/60"
+                        >
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            required
+                            placeholder="Your name"
+                            class="w-full
+                                   mt-2
+                                   px-4 py-3.5
+                                   rounded-xl
+                                   bg-white/5
+                                   border border-white/10
+                                   text-white
+                                   placeholder:text-white/25
+                                   outline-none
+                                   focus:border-[#c9a45c]
+                                   transition"
+                        >
+
+                    </div>
+
+
+                    <div
+                        class="grid sm:grid-cols-2
+                               gap-5"
+                    >
+
+                        <div>
+
+                            <label
+                                class="text-sm
+                                       text-white/60"
+                            >
+                                Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                required
+                                placeholder="Phone number"
+                                class="w-full
+                                       mt-2
+                                       px-4 py-3.5
+                                       rounded-xl
+                                       bg-white/5
+                                       border border-white/10
+                                       text-white
+                                       placeholder:text-white/25
+                                       outline-none
+                                       focus:border-[#c9a45c]"
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label
+                                class="text-sm
+                                       text-white/60"
+                            >
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                placeholder="Email address"
+                                class="w-full
+                                       mt-2
+                                       px-4 py-3.5
+                                       rounded-xl
+                                       bg-white/5
+                                       border border-white/10
+                                       text-white
+                                       placeholder:text-white/25
+                                       outline-none
+                                       focus:border-[#c9a45c]"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <label
+                            class="text-sm
+                                   text-white/60"
+                        >
+                            Service Required
+                        </label>
+
+                        <select
+                            class="w-full
+                                   mt-2
+                                   px-4 py-3.5
+                                   rounded-xl
+                                   bg-[#0b1d35]
+                                   border border-white/10
+                                   text-white
+                                   outline-none
+                                   focus:border-[#c9a45c]"
+                        >
+
+                            <option>
+                                Accounting
+                            </option>
+
+                            <option>
+                                Income Tax
+                            </option>
+
+                            <option>
+                                GST
+                            </option>
+
+                            <option>
+                                Audit & Assurance
+                            </option>
+
+                            <option>
+                                Business Compliance
+                            </option>
+
+                            <option>
+                                Financial Advisory
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label
+                            class="text-sm
+                                   text-white/60"
+                        >
+                            Message
+                        </label>
+
+                        <textarea
+                            rows="4"
+                            placeholder="Tell us briefly about your requirement..."
+                            class="w-full
+                                   mt-2
+                                   px-4 py-3.5
+                                   rounded-xl
+                                   bg-white/5
+                                   border border-white/10
+                                   text-white
+                                   placeholder:text-white/25
+                                   outline-none
+                                   focus:border-[#c9a45c]"
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="gold-btn
+                               w-full
+                               py-4
+                               rounded-xl
+                               font-bold
+                               transition
+                               flex items-center
+                               justify-center
+                               gap-2"
+                    >
+
+                        Send Enquiry
+
+                        <i
+                            data-lucide="send"
+                            class="w-5"
+                        ></i>
+
+                    </button>
+
+
+                    <p
+                        id="formMessage"
+                        class="hidden
+                               text-center
+                               text-sm
+                               text-[#e4c986]"
+                    >
+                        Thank you! Your enquiry has been
+                        prepared successfully.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+    class="bg-[#040c16]
+           text-white
+           border-t border-white/5"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               px-5 lg:px-8
+               py-14"
+    >
+
+        <div
+            class="grid md:grid-cols-2
+                   lg:grid-cols-4
+                   gap-10"
+        >
+
+            <!-- BRAND -->
+
+            <div
+                class="lg:col-span-2"
+            >
+
+                <div
+                    class="flex items-center gap-3"
+                >
+
+                    <div
+                        class="w-12 h-12
+                               rounded-xl
+                               bg-gradient-to-br
+                               from-[#e4c986]
+                               to-[#a87c35]
+                               text-[#071426]
+                               flex items-center
+                               justify-center
+                               font-display
+                               font-bold
+                               text-xl"
+                    >
+                        KG
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="font-bold"
+                        >
+                            Keshav G & Associates
+                        </p>
+
+                        <p
+                            class="text-xs
+                                   text-white/35
+                                   uppercase
+                                   tracking-widest"
+                        >
+                            Chartered Accountants
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="text-white/40
+                           leading-7
+                           max-w-lg
+                           mt-6"
+                >
+
+                    Professional accounting, taxation,
+                    compliance and financial advisory services
+                    for individuals and businesses.
+
+                </p>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div>
+
+                <h3
+                    class="font-bold
+                           text-[#e4c986]"
+                >
+                    Quick Links
+                </h3>
+
+                <div
+                    class="space-y-3
+                           mt-5"
+                >
+
+                    <a
+                        href="#about"
+                        class="block
+                               text-sm
+                               text-white/45
+                               hover:text-white
+                               transition"
+                    >
+                        About Us
+                    </a>
+
+                    <a
+                        href="#services"
+                        class="block
+                               text-sm
+                               text-white/45
+                               hover:text-white
+                               transition"
+                    >
+                        Services
+                    </a>
+
+                    <a
+                        href="#process"
+                        class="block
+                               text-sm
+                               text-white/45
+                               hover:text-white
+                               transition"
+                    >
+                        Our Process
+                    </a>
+
+                    <a
+                        href="#faq"
+                        class="block
+                               text-sm
+                               text-white/45
+                               hover:text-white
+                               transition"
+                    >
+                        FAQ
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="block
+                               text-sm
+                               text-white/45
+                               hover:text-white
+                               transition"
+                    >
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div>
+
+                <h3
+                    class="font-bold
+                           text-[#e4c986]"
+                >
+                    Contact
+                </h3>
+
+                <div
+                    class="space-y-3
+                           mt-5"
+                >
+
+                    <a
+                        href="tel:8923810051"
+                        class="flex items-start gap-2
+                               text-sm
+                               text-white/45
+                               hover:text-white"
+                    >
+
+                        <i
+                            data-lucide="phone"
+                            class="w-4 shrink-0"
+                        ></i>
+
+                        8923810051
+
+                    </a>
+
+                    <a
+                        href="mailto:cakeshav96@gmail.com"
+                        class="flex items-start gap-2
+                               text-sm
+                               text-white/45
+                               hover:text-white"
+                    >
+
+                        <i
+                            data-lucide="mail"
+                            class="w-4 shrink-0"
+                        ></i>
+
+                        cakeshav96@gmail.com
+
+                    </a>
+
+                    <div
+                        class="flex items-start gap-2
+                               text-sm
+                               text-white/45"
+                    >
+
+                        <i
+                            data-lucide="map-pin"
+                            class="w-4 shrink-0"
+                        ></i>
+
+                        Post Office, Kacheri Road,
+                        Etah, Uttar Pradesh
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="border-t
+                   border-white/5
+                   mt-12 pt-7
+                   flex flex-col
+                   sm:flex-row
+                   items-center
+                   justify-between
+                   gap-4"
+        >
+
+            <p
+                class="text-xs
+                       text-white/30"
+            >
+                © 2026 Keshav G & Associates.
+                All rights reserved.
+            </p>
+
+            <p
+                class="text-xs
+                       text-white/30"
+            >
+                Chartered Accountants
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     FLOATING CONTACT
+========================================================= -->
+
+<div
+    class="fixed
+           right-5
+           bottom-5
+           z-50
+           flex flex-col
+           gap-3"
+>
+
+    <!-- CALL -->
+
+    <a
+        href="tel:8923810051"
+        aria-label="Call Keshav G and Associates"
+        class="w-14 h-14
+               rounded-full
+               bg-[#071426]
+               text-white
+               border border-white/10
+               shadow-2xl
+               flex items-center
+               justify-center
+               hover:scale-110
+               transition"
+    >
+
+        <i data-lucide="phone"></i>
+
+    </a>
+
+
+    <!-- WHATSAPP -->
+
+    <a
+        href="https://wa.me/918923810051?text=Hello%20Keshav%20G%20%26%20Associates,%20I%20would%20like%20to%20discuss%20your%20services."
+        target="_blank"
+        aria-label="WhatsApp Keshav G and Associates"
+        class="w-14 h-14
+               rounded-full
+               bg-[#25D366]
+               text-white
+               shadow-2xl
+               flex items-center
+               justify-center
+               hover:scale-110
+               transition"
+    >
+
+        <i data-lucide="message-circle"></i>
+
+    </a>
+
+</div>
+
+
+<!-- BACK TO TOP -->
+
+<button
+    id="backTop"
+    class="fixed
+           left-5
+           bottom-5
+           z-50
+           w-11 h-11
+           rounded-xl
+           bg-[#c9a45c]
+           text-[#071426]
+           flex items-center
+           justify-center
+           shadow-xl
+           opacity-0
+           pointer-events-none
+           translate-y-5
+           transition"
+>
+
+    <i
+        data-lucide="arrow-up"
+        class="w-5"
+    ></i>
+
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* ==============================
+       LUCIDE
+    ============================== */
+
+    lucide.createIcons();
+
+
+    /* ==============================
+       MOBILE MENU
+    ============================== */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    let menuOpen = false;
+
+    menuToggle.addEventListener("click", () => {
+
+        menuOpen = !menuOpen;
+
+        mobileMenu.classList.toggle(
+            "open",
+            menuOpen
+        );
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            menuOpen
+        );
+
+        menuToggle.innerHTML = menuOpen
+            ? '<i data-lucide="x"></i>'
+            : '<i data-lucide="menu"></i>';
+
+        lucide.createIcons();
+
+    });
+
+
+    /* ==============================
+       CLOSE MOBILE MENU
+    ============================== */
+
+    document
+        .querySelectorAll(".mobile-link")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuOpen = false;
+
+                mobileMenu.classList.remove("open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.innerHTML =
+                    '<i data-lucide="menu"></i>';
+
+                lucide.createIcons();
+
+            });
+
+        });
+
+
+    /* ==============================
+       REVEAL ON SCROLL
+    ============================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "active"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: .12
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* ==============================
+       COUNTERS
+    ============================== */
+
+    const counters =
+        document.querySelectorAll(".counter");
+
+    let countersStarted = false;
+
+    const counterObserver =
+        new IntersectionObserver(
+            entries => {
+
+                if (
+                    entries.some(
+                        entry => entry.isIntersecting
+                    ) &&
+                    !countersStarted
+                ) {
+
+                    countersStarted = true;
+
+                    counters.forEach(counter => {
+
+                        const target =
+                            Number(
+                                counter.dataset.target
+                            );
+
+                        let current = 0;
+
+                        const increment =
+                            Math.max(
+                                1,
+                                Math.ceil(
+                                    target / 50
+                                )
+                            );
+
+                        const updateCounter = () => {
+
+                            current += increment;
+
+                            if (
+                                current >= target
+                            ) {
+
+                                counter.textContent =
+                                    target;
+
+                                return;
+
+                            }
+
+                            counter.textContent =
+                                current;
+
+                            requestAnimationFrame(
+                                updateCounter
+                            );
+
+                        };
+
+                        updateCounter();
+
+                    });
+
+                }
+
+            },
+            {
+                threshold: .3
+            }
+        );
+
+
+    const statsSection =
+        document.querySelector(".counter")
+        ?.closest("section");
+
+    if (statsSection) {
+
+        counterObserver.observe(statsSection);
+
+    }
+
+
+    /* ==============================
+       FAQ
+    ============================== */
+
+    document
+        .querySelectorAll(".faq-button")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const item =
+                    button.closest(".faq-item");
+
+                document
+                    .querySelectorAll(".faq-item")
+                    .forEach(other => {
+
+                        if (
+                            other !== item
+                        ) {
+
+                            other.classList.remove(
+                                "open"
+                            );
+
+                        }
+
+                    });
+
+                item.classList.toggle("open");
+
+            });
+
+        });
+
+
+    /* ==============================
+       CHART
+    ============================== */
+
+    const chartCanvas =
+        document.getElementById(
+            "financeChart"
+        );
+
+    if (chartCanvas) {
+
+        new Chart(
+            chartCanvas,
+            {
+                type: "line",
+
+                data: {
+
+                    labels: [
+                        "Jan",
+                        "Feb",
+                        "Mar",
+                        "Apr",
+                        "May",
+                        "Jun"
+                    ],
+
+                    datasets: [
+                        {
+                            label:
+                                "Illustrative Revenue",
+
+                            data: [
+                                35,
+                                42,
+                                39,
+                                55,
+                                63,
+                                74
+                            ],
+
+                            borderColor:
+                                "#b58b42",
+
+                            backgroundColor:
+                                "rgba(201,164,92,.12)",
+
+                            fill: true,
+
+                            tension: .4,
+
+                            pointRadius: 4,
+
+                            pointBackgroundColor:
+                                "#071426",
+
+                            pointBorderColor:
+                                "#c9a45c",
+
+                            pointBorderWidth: 2
+                        }
+                    ]
+
+                },
+
+                options: {
+
+                    responsive: true,
+
+                    maintainAspectRatio: false,
+
+                    plugins: {
+
+                        legend: {
+                            display: false
+                        }
+
+                    },
+
+                    scales: {
+
+                        y: {
+
+                            beginAtZero: true,
+
+                            grid: {
+                                color:
+                                    "rgba(7,20,38,.06)"
+                            },
+
+                            ticks: {
+                                color:
+                                    "#64748b"
+                            }
+
+                        },
+
+                        x: {
+
+                            grid: {
+                                display: false
+                            },
+
+                            ticks: {
+                                color:
+                                    "#64748b"
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==============================
+       CONTACT FORM
+    ============================== */
+
+    const contactForm =
+        document.getElementById(
+            "contactForm"
+        );
+
+    const formMessage =
+        document.getElementById(
+            "formMessage"
+        );
+
+    contactForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            formMessage.classList.remove(
+                "hidden"
+            );
+
+            contactForm.reset();
+
+            setTimeout(() => {
+
+                formMessage.classList.add(
+                    "hidden"
+                );
+
+            }, 5000);
+
+        }
+    );
+
+
+    /* ==============================
+       BACK TO TOP
+    ============================== */
+
+    const backTop =
+        document.getElementById(
+            "backTop"
+        );
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (window.scrollY > 600) {
+
+                backTop.classList.remove(
+                    "opacity-0",
+                    "pointer-events-none",
+                    "translate-y-5"
+                );
+
+            } else {
+
+                backTop.classList.add(
+                    "opacity-0",
+                    "pointer-events-none",
+                    "translate-y-5"
+                );
+
+            }
+
+        }
+    );
+
+
+    backTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+
+    /* ==============================
+       CURSOR GLOW
+    ============================== */
+
+    const cursorGlow =
+        document.getElementById(
+            "cursorGlow"
+        );
+
+    document.addEventListener(
+        "mousemove",
+        event => {
+
+            cursorGlow.style.left =
+                event.clientX + "px";
+
+            cursorGlow.style.top =
+                event.clientY + "px";
+
+        }
+    );
+
+
+    /* ==============================
+       3D CARD MOUSE EFFECT
+    ============================== */
+
+    document
+        .querySelectorAll(".card-3d")
+        .forEach(card => {
+
+            card.addEventListener(
+                "mousemove",
+                event => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        event.clientX -
+                        rect.left;
+
+                    const y =
+                        event.clientY -
+                        rect.top;
+
+                    const centerX =
+                        rect.width / 2;
+
+                    const centerY =
+                        rect.height / 2;
+
+                    const rotateY =
+                        (x - centerX) /
+                        25;
+
+                    const rotateX =
+                        (centerY - y) /
+                        25;
+
+                    card.style.transform =
+                        `
+                        translateY(-12px)
+                        rotateX(${rotateX}deg)
+                        rotateY(${rotateY}deg)
+                        scale(1.01)
+                        `;
+
+                }
+            );
+
+
+            card.addEventListener(
+                "mouseleave",
+                () => {
+
+                    card.style.transform =
+                        "";
+
+                }
+            );
+
+        });
+
+
+    /* ==============================
+       ACTIVE NAV ON SCROLL
+    ============================== */
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 150;
+
+                if (
+                    window.scrollY >=
+                    sectionTop
+                ) {
+
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
+
+                }
+
+            });
+
+            navLinks.forEach(link => {
+
+                link.classList.remove(
+                    "text-white"
+                );
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+
+                    link.classList.add(
+                        "text-white"
+                    );
+
+                }
+
+            });
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
+```
